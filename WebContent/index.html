@@ -1,0 +1,58 @@
+<html ng-app="loja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Testando o Angular</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/dist/css/AdminLTE.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/dist/css/skins/skin-blue.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/ionicons/css/ionicons.min.css"/>
+</head>
+
+<body ng-controller="testeController as user" id="corpo">
+	
+	<!-- 	Recebendo informações do Controllers testeController que foi apelidado para user-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" >
+				<h1 style="text-align: center;">Seja bem vindo: {{user.meuNome}} {{user.sobreNome}}</h1>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Informe o seu nome: </h3>
+				<input type="text" ng-model="user.meuNome">
+				<input type="text" ng-model="user.sobreNome">
+			</div>
+		</div>
+	</div>
+	
+	<!-- 	Contador rebendo o autoincremento através do controller -->
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<p><button class="btn-success" ng-click="addContador();">Adicionar</button> 
+			<hr>
+			<h1>Contador: {{contador}}</h1>
+		</div>
+	</div>
+	
+	<!-- 	percorrendo os dados de um array -->
+	<hr>
+	<h1>Loop</h1>
+	<ul>
+		<li ng-repeat="nome in pessoas"><h4>{{nome}}</h4></li>
+	</ul>
+
+    <!-- REQUIRED JS SCRIPTS -->	
+	<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script> <!-- Correio -->
+	<script type="text/javascript" src="resources/dist/js/app.min.js"></script> <!-- Correio -->
+	<script type="text/javascript" src="resources/js/angular.min.js"></script>
+	
+	<!-- 	Angular Controller -->
+	<script type="text/javascript" src="resources/js/testeController.js"></script>
+</body>
+</html>
